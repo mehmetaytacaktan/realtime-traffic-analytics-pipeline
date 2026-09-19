@@ -124,7 +124,7 @@ def run_traffic_pipeline(
 
 if __name__ == "__main__":
     run_traffic_pipeline(
-        source_video_path="input_traffic.mp4",
+        source_video_path="sample_traffic.mp4",
         target_video_path="output_analytics.mp4",
         start_second=5,
         end_second=20,
