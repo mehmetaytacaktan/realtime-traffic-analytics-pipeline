@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Hugging Face Hub CLI
+      - name: Install Hugging Face Hub SDK
         run: |
           pip install --upgrade huggingface_hub
 
@@ -27,4 +27,4 @@ jobs:
           HF_USERNAME: "musashivulpix"
           SPACE_NAME: "realtime-traffic-analytics-pipeline"
         run: |
-          huggingface-cli upload $HF_USERNAME/$SPACE_NAME . . --repo-type=space --token=$HF_TOKEN --delete="*"
+          hf upload $HF_USERNAME/$SPACE_NAME . . --repo-type=space --token=$HF_TOKEN --delete="*"
