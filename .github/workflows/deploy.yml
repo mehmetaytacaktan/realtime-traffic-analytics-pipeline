@@ -11,17 +11,20 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          fetch-depth: 0
-          lfs: true # Enables to detect git lfs files.
+          python-version: '3.10'
 
-      - name: Install Git LFS
-        run: git lfs install
+      - name: Install Hugging Face Hub CLI
+        run: |
+          pip install --upgrade huggingface_hub
 
-      - name: Push to Hugging Face
+      - name: Sync to Hugging Face Space via HF CLI
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: "musashivulpix"
           SPACE_NAME: "realtime-traffic-analytics-pipeline"
         run: |
-          git push --force https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$SPACE_NAME main
+          huggingface-cli upload $HF_USERNAME/$SPACE_NAME . . --repo-type=space --token=$HF_TOKEN --delete="*"
