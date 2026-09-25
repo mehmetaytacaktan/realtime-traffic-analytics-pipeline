@@ -8,7 +8,7 @@
 
 An end-to-end Computer Vision pipeline designed for real-time vehicle detection, multi-object tracking (MOT), and dynamic line-crossing counting. Powered by **YOLOv8**, **ByteTrack**, **Supervision**, and **Streamlit**, with integrated **FFmpeg H.264 video codec optimization** for web rendering.
 
-!!!! **Live Interactive Demo:** [Try the application on Streamlit Cloud]([https://senin-app-linkin.streamlit.app](https://realtime-traffic-analytics-pipeline-iu3kqeb6wqmcb2riz6jq42.streamlit.app/))
+**Live Interactive Demo:** [Try the application on Streamlit Cloud]([https://senin-app-linkin.streamlit.app](https://realtime-traffic-analytics-pipeline-iu3kqeb6wqmcb2riz6jq42.streamlit.app/))
 
 ---
 
